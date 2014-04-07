@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="random"
+ZSH_THEME="fishy"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -53,8 +53,12 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+export GOPATH="$HOME/Dropbox/go"
+export PATH="/usr/local/git/bin:$PATH"
+export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:/Applications/dart/dart-sdk/bin"
 
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/local/go/bin:/Users/briangshacklett/bin:/Users/briangshacklett/Dropbox/go/bin:/Applications/dart/dart-sdk/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
