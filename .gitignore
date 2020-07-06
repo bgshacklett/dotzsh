@@ -1,0 +1,4 @@
+conf.d/secrets.zsh
+.zinit
+.zcompdump*
+**/*.zwc
