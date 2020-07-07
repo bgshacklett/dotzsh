@@ -25,6 +25,8 @@ for file in $ZDOTDIR/conf.d/*.zsh; do
   source "$file"
 done
 
+# Enable completions
+zpcompinit; zpcdreplay
 
 ## Set Theme
 zinit light denysdovhan/spaceship-prompt
