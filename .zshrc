@@ -1,8 +1,9 @@
 # Path Config
-PATH=~/homebrew/bin:$PATH
+PATH=$HOME/homebrew/bin:$PATH
 PATH=$(pyenv root)/shims:$PATH
-PATH=/Users/brian.shacklett/.rbenv/shims/:$PATH
-PATH="~/homebrew/opt/openjdk/bin:$PATH"
+PATH=$HOME/.rbenv/shims/:$PATH
+PATH="$HOME/homebrew/opt/openjdk/bin:$PATH"
+PATH="$HOME/.local/bin:$PATH"
 
 
 # Added by Zinit's installer{{{
