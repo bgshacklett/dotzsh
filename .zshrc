@@ -1,9 +1,11 @@
 # Path Config
 PATH=$HOME/homebrew/bin:$PATH
+PATH=$HOME/homebrew/sbin:$PATH
 PATH=$(pyenv root)/shims:$PATH
 PATH=$HOME/.rbenv/shims/:$PATH
 PATH="$HOME/homebrew/opt/openjdk/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
+PATH="$PATH:$HOME/node_modules/.bin"
 
 
 # Added by Zinit's installer{{{
@@ -20,16 +22,17 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 # End of Zinit's installer chunk}}}
 
-
-# Source all files in conf.d
-for file in $ZDOTDIR/conf.d/*.zsh; do
-  source "$file"
-done
-
 # Enable completions
 zpcompinit; zpcdreplay
 
+
 ## Set Theme
-zinit light denysdovhan/spaceship-prompt
-export SPACESHIP_EXIT_CODE_SHOW=true
-export SPACESHIP_VI_MODE_SHOW=false
+eval "$(starship init zsh)"
+
+# Source all files in conf.d
+ for file in $ZDOTDIR/conf.d/*.zsh; do
+   # echo "source ${file}..."
+   source "$file"
+ done
+
+complete -C "$(which aws_completer)" aws
