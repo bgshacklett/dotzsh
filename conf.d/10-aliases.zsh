@@ -1,6 +1,7 @@
 alias ll="ls -lh"
 alias k=kubectl
 alias vi=nvim
+alias :q=exit
 
 # Accounting for PowerShell muscle memory
 function ri() { printf "\a"; echo "wrong command" >&2; rm $@ }

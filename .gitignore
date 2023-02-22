@@ -2,3 +2,4 @@
 .zinit
 .zcompdump*
 **/*.zwc
+.zsh_sessions

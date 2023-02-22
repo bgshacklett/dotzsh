@@ -1,5 +1,6 @@
 # VI Mode
 bindkey -v
+bindkey -M vicmd -r :  # Disable execute mode binding
 
 # Remove delay on mode change
 # Note: This impacts the ability to use escape sequences.

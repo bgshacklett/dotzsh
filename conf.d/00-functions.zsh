@@ -24,7 +24,8 @@ iter()
 
   git commit \
     --amend \
-    --no-edit
+    --no-edit \
+    "$@"
 
   git push \
     --force-with-lease

@@ -2,7 +2,7 @@ export PATH="/Users/brian.shacklett/.jenv/shims:${PATH}"
 export JENV_SHELL=zsh
 export JENV_LOADED=1
 unset JAVA_HOME
-source '/Users/brian.shacklett/homebrew/Cellar/jenv/0.5.4/libexec/libexec/../completions/jenv.zsh'
+source "$(brew --prefix jenv)/libexec/completions/jenv.zsh"
 jenv rehash 2>/dev/null
 jenv refresh-plugins
 jenv() {
