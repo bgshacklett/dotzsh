@@ -3,3 +3,4 @@
 .zcompdump*
 **/*.zwc
 .zsh_sessions
+.zsh_history

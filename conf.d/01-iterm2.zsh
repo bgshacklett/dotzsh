@@ -5,7 +5,5 @@ zinit ice depth"1" \
 zinit load gnachman/iTerm2-shell-integration
 
 # functions
-zinit snippet 'https://raw.githubusercontent.com/gnachman/iterm2-website/master/source/shell_integration/zsh'
-
-# Touchbar config
-zinit light iam4x/zsh-iterm-touchbar
+SHI_VER_HASH='90c7e175d745062701b5308dff996d65a025b6d9'
+zinit snippet "https://raw.githubusercontent.com/gnachman/iTerm2-shell-integration/$SHI_VER_HASH/shell_integration/zsh"

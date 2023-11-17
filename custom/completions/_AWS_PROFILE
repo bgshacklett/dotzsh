@@ -1,0 +1,12 @@
+#compdef AWS_PROFILE
+_aws_profile_env() {
+    local -a test_profiles
+    test_profiles=('test:test_description')
+  $profiles = list_aws_profiles
+  echo $profiles
+  _describe 'AWS_PROFILE' test_profiles
+}
+
+set -x
+_aws_profile_env "$@"
+set +x

@@ -16,7 +16,8 @@ export KEYTIMEOUT=1
 
 # Enable vi-mode plugin
 function zvm_config() {
+  ZVM_INIT_MODE=sourcing
   ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
   ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 }
-zinit wait lucid for jeffreytse/zsh-vi-mode
+zinit light jeffreytse/zsh-vi-mode

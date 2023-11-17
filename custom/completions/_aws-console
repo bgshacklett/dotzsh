@@ -1,0 +1,14 @@
+#compdef aws-console
+
+# _aws_profiles
+. "$HOME/.local/share/zinit/completions/common.sh"
+
+_aws_console() {
+  _arguments \
+    '-h[Show help message]' \
+    '--help[Show help message]' \
+    '--profile[AWS profile to use]:AWS profile:_aws_profiles' \
+    '--stdout[Echo signin URL to stdout]'
+}
+
+_aws_console "$@"
