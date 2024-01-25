@@ -69,6 +69,12 @@ iter()
 }
 
 
+get_default_git_branch()
+{
+  git remote show origin | sed -n '/HEAD branch/s/.*: //p'
+}
+
+
 nfb()
 {
   default_branch=$(git remote show origin | sed -n '/HEAD branch/s/.*: //p')
@@ -77,6 +83,46 @@ nfb()
 
   git fetch --all && git checkout -b "$branch_name" "origin/$default_branch"
   git branch --unset-upstream
+}
+
+
+update-git-branches()
+{
+  git fetch --all
+
+  local current_branch="$(git branch --show-current)"
+  local default_branch="$(get_default_git_branch)"
+
+  local stash="$(git diff --exit-code > /dev/null || git stash && true)"
+
+  for b in $(git branch); do
+    if [[ "$b" == "$default_branch" || "$b" == '*' ]]; then continue; fi
+    echo "Rebasing ${b}:"
+    git switch "${b}"
+    git rebase "${default_branch}"
+    git status \
+      | grep 'rebase in progress' \
+      && echo "NonInteractive rebase of ${b} failed. Manual changes required." \
+      && git rebase --abort
+    echo "\n"
+  done
+
+  [[ -z "$stash" ]] || git stash pop
+  git switch "${current_branch}"
+}
+
+
+summarize-git-branches()
+{
+  local current_branch="$(git branch --show-current)"
+  local default_branch="$(get_default_git_branch)"
+
+  for b in $(git branch); do
+    if [[ "$b" == "$default_branch" || "$b" == '*' ]]; then continue; fi
+    echo "Diff stats for ${b}:"
+    git diff -w --stat "$default_branch" "$b"
+    echo "\n"
+  done
 }
 
 
