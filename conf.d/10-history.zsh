@@ -1,4 +1,4 @@
-HISTFILE=${XDG_DATA_HOME:-"$HOME/.local/share/zsh/history"}
+HISTFILE="${XDG_DATA_HOME:-"$HOME/.local/share"}/zsh/history"
 HISTSIZE=10000
 SAVEHIST=10000
 setopt HIST_IGNORE_ALL_DUPS
