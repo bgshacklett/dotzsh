@@ -1,6 +1,10 @@
 # Path Config
-PATH="$HOME/.local/bin:$PATH"
-PATH="$HOME/.linuxbrew/bin:$PATH"
+# On macOS, local bins take precedence over system paths; on Linux, system paths take precedence
+if [[ "$OSTYPE" == darwin* ]]; then
+  PATH="$HOME/.local/bin:$HOME/.linuxbrew/bin:$PATH"
+else
+  PATH="$PATH:$HOME/.local/bin:$HOME/.linuxbrew/bin"
+fi
 eval "$(brew shellenv)"
 
 # Grab async command
