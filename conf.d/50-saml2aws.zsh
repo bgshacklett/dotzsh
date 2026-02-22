@@ -1,1 +1,1 @@
-eval "$(saml2aws --completion-script-zsh)"
+# eval "$(saml2aws --completion-script-zsh)"

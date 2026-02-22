@@ -9,5 +9,5 @@ zinit light junegunn/fzf
 
 ## Enable Tab Completion with fzf
 export FZF_BASE="$(dirname $(which fzf))"
-. "${FZF_BASE}/completion.zsh"
-. "${FZF_BASE}/key-bindings.zsh"
+# . "${FZF_BASE}/completion.zsh"
+# . "${FZF_BASE}/key-bindings.zsh"
