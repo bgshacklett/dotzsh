@@ -12,3 +12,4 @@ alias git-nwadd="git diff -U0 -w -b --ignore-blank-lines --no-color | git apply 
 alias isodate="date +"%Y-%m-%dT%H%M%S%z""
 alias zisodate="date -u +"%Y-%m-%dT%H%M%SZ""
 alias n='nerdctl'
+alias open='xdg-open'
